@@ -11,9 +11,9 @@ const Navbar = () => {
 
     let items = [
         {label: 'Home', icon: 'pi pi-fw pi-home', command: () => { Router.push('/')}},
-        {label: 'Search', icon: 'pi pi-fw pi-search',command: () => {Router.push('/search?purpose=for-rent')}},
-        {label: 'Rent Property', icon: 'pi pi-fw pi-credit-card',command: () => {Router.push('/search?purpose=for-rent')}},
-        {label: 'Buy Property', icon: 'pi pi-fw pi-building',command: () => {Router.push('/search?purpose=for-sale')}}
+        {label: 'Search', icon: 'pi pi-fw pi-search',command: () => {Router.push('/Search?purpose=for-rent')}},
+        {label: 'Rent Property', icon: 'pi pi-fw pi-credit-card',command: () => {Router.push('/Search?purpose=for-rent')}},
+        {label: 'Buy Property', icon: 'pi pi-fw pi-building',command: () => {Router.push('/Search?purpose=for-sale')}}
     ];
     let menu=false;
     const header = <div className="p-d-flex p-jc-between p-ai-center">

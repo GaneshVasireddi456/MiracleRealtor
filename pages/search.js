@@ -7,7 +7,7 @@ import { Properties } from '../components/Properties';
 import { filterData, getFilterValues } from '../utils/filterData';
 import { Dropdown } from 'primereact/dropdown';
  
-const search = ({ data }) => {
+const Search = ({ data }) => {
     const [filters] = useState(filterData);
     const [filter, setfilter] = useState(false)
     const router = useRouter()
@@ -27,7 +27,7 @@ const search = ({ data }) => {
      });
      useEffect(() => {
         router.push({
-            pathname: '/search',
+            pathname: '/Search',
             query: allValues
           })
          console.log(allValues);
@@ -56,7 +56,7 @@ const search = ({ data }) => {
         </>
     )
 }
-export default search
+export default Search
 export async function getServerSideProps({ query }) {
     const purpose = query.purpose || 'for-rent';
     const rentFrequency = query.rentFrequency || 'yearly';
