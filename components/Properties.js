@@ -6,7 +6,7 @@ import { Dialog } from 'primereact/dialog';
 import { useState } from 'react/cjs/react.development';
 
 
-export const Properties = ({ data }) => {
+ const Properties = ({ data }) => {
     // const [dialog, setdialog] = useState(false)
     const [propertyData, setpropertyData] = useState()
     const showDialog = async(property) => {
@@ -31,7 +31,29 @@ export const Properties = ({ data }) => {
                     </Card>
                 </div>)
             }
-          
+           {dialog&& <Dialog modal='false' visible={dialog} onHide={() => setdialog(!dialog)} style={{ width: '60vw' }}  >
+                <div className="p-d-flex p-jc-center ">
+                    <div >
+                    <Image src={propertyData.coverPhoto.url?propertyData.coverPhoto.url:''} width={'500px'} height={'300px'} />
+                    </div>
+                    <div className="p-grid p-pt-2 p-pl-4">
+                       <p>
+                           <span style={{fontWeight:'bolder'}}>Area :</span>&nbsp;{Math.trunc(propertyData.area)}&nbsp;<span >sqft,</span>&nbsp;
+                            <span style={{fontWeight:'bolder'}}>Rooms :</span>&nbsp;{Math.trunc(propertyData.rooms)},&nbsp;
+                            <span style={{fontWeight:'bolder'}}>Baths :</span>&nbsp;{propertyData.baths},&nbsp;
+                            <span style={{fontWeight:'bolder'}}>Price :</span>&nbsp;{propertyData.price}&nbsp;₹,&nbsp;
+                            <span style={{fontWeight:'bolder'}}>Rent frequency :</span>&nbsp;{propertyData.rentFrequency},&nbsp;
+                            <span style={{fontWeight:'bolder'}}>Agency name :</span>&nbsp;{propertyData.agency.name},&nbsp;
+                            <span style={{fontWeight:'bolder'}}>Contact name :</span>&nbsp;{propertyData.contactName},&nbsp;
+                            <span style={{fontWeight:'bolder'}}>Mobile No :</span>&nbsp;{propertyData.phoneNumber.mobile},&nbsp;
+                            {/* <span style={{fontWeight:'bolder'}}>Location :</span>&nbsp;[{propertyData._geoloc.lat},{propertyData._geoloc.lng}],&nbsp; */}
+                            </p>
+                    </div>
+                    </div>
+
+
+            </Dialog>}
         </div>
     )
 }
+export default Properties

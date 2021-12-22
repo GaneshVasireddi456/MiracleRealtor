@@ -1,4 +1,4 @@
-import { Properties } from "../components/Properties";
+import  Properties  from "../components/Properties";
 import Router from 'next/router';
 import Image from 'next/image'
 import { Button } from 'primereact/button';
