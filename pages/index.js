@@ -12,12 +12,12 @@ export default function Home({ forRent, forSale }) {
         des1="Rental homes for everyone"
         des2="Explore Apratments, Villas,Homes and more "
         data={forRent}></Banner>
-      {/* <Banner address='/../public/homeforSale.jpg'
+      <Banner address='/../public/homeforSale.jpg'
         purpose='Buy a Home'
         purposeforQuery='for-sale'
         des1="Find buy & Own your dream home"
         des2="Explore Apratments, Villas,Homes and more "
-        data={forSale}></Banner> */}
+        data={forSale}></Banner>
     </div>
   )
 }
