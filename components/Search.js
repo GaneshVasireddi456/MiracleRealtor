@@ -7,7 +7,7 @@ import { Button } from 'primereact/button';
 
 
 
-const Navbar = () => {
+const Search = () => {
 
     let items = [
         {label: 'Home', icon: 'pi pi-fw pi-home', command: () => { Router.push('/')}},
@@ -30,4 +30,4 @@ const Navbar = () => {
         </div>
     )
 }
-export default Navbar
+export default Search
