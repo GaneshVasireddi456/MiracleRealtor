@@ -3,14 +3,10 @@ import React from 'react'
 import Banner from '../components/Banner'
 import { getAPI, baseURL } from '../utils/Api'
 
-
-
-
-
 export default function Home({ forRent, forSale }) {
   return (
     <div >
-      <Banner address='/../public/homeforRent.jpg'
+      {/* <Banner address='/../public/homeforRent.jpg'
         purpose='Rent a Home'
         purposeforQuery='for-rent'
         des1="Rental homes for everyone"
@@ -21,7 +17,7 @@ export default function Home({ forRent, forSale }) {
         purposeforQuery='for-sale'
         des1="Find buy & Own your dream home"
         des2="Explore Apratments, Villas,Homes and more "
-        data={forSale}></Banner>
+        data={forSale}></Banner> */}
     </div>
   )
 }
