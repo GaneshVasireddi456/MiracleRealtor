@@ -39,8 +39,8 @@ const Search = ({ data }) => {
                 <Card className="p-mt-2" title={<div onClick={() => { setfilter(!filter); }} className="p-d-flex p-jc-center" style={{ fontSize: '18px', color: '#4F46E5', cursor: 'pointer' }}>Search Property by Filters &nbsp;<i className="pi pi-filter" style={{ fontSize: '20px' }}></i></div>} style={{ width: '98%' }}>
                     {filter && <div className="p-grid p-fluid">
                         {filterData.map((element) => {
-                            return (<div className="p-col-12 p-lg-2 p-md-4 p-sm-6">                           
-                            <Dropdown showClear='true' name={element.querylabel} value={allValues[element.querylabel]} options={element.items} className="p-dropdown-sm" placeholder={element.placeholder} onChange={(e)=>{setAllValues({...allValues, [e.target.name]: e.value});console.log(e);}}/>
+                            return (<div key={element.querylabel} className="p-col-12 p-lg-2 p-md-4 p-sm-6">                           
+                            <Dropdown  showClear='true' name={element.querylabel} value={allValues[element.querylabel]} options={element.items} className="p-dropdown-sm" placeholder={element.placeholder} onChange={(e)=>{setAllValues({...allValues, [e.target.name]: e.value});console.log(e);}}/>
                             </div>
                             
                             )

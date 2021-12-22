@@ -18,8 +18,8 @@ export const Properties = ({ data }) => {
     return (
         <div className="p-grid p-nogutter">
             {data.map((property) =>
-                <div className="p-col-12 p-lg-4 p-md-6 p-sm-12 card" onClick={() => { showDialog(property) }}>
-                    <Card subTitle={<div className="p-d-flex p-jc-between" >
+                <div key={property.id} className="p-col-12 p-lg-4 p-md-6 p-sm-12 card" onClick={() => { showDialog(property) }}>
+                    <Card  subTitle={<div className="p-d-flex p-jc-between" >
                         <div style={{ fontSize: '16px', fontWeight: 'bold' }}><span>Price : </span><span style={{ fontWeight: 'bolder' }}>{property.price + " ₹"}</span></div>
                         <div style={{ fontSize: '16px', fontWeight: 'bold' }}><span>No of rooms : </span><span style={{ fontWeight: 'bolder' }}>{property.rooms}</span></div>
                     </div>}
