@@ -6,13 +6,13 @@ import { getAPI, baseURL } from '../utils/Api'
 export default function Home({ forRent, forSale }) {
   return (
     <div >
-      <Banner address='/static/homeforRent.jpg'
+      <Banner address='/homeforRent.jpg'
         purpose='Rent a Home'
         purposeforQuery='for-rent'
         des1="Rental homes for everyone"
         des2="Explore Apratments, Villas,Homes and more "
         data={forRent}></Banner>
-      <Banner address='/static/homeforSale.jpg'
+      <Banner address='/homeforSale.jpg'
         purpose='Buy a Home'
         purposeforQuery='for-sale'
         des1="Find buy & Own your dream home"
