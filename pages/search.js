@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Card } from 'primereact/card';
 import { Router, useRouter } from 'next/router'
 import { baseURL, getAPI } from '../utils/Api';
-import { Properties } from '../components/Properties';
+import  Properties  from '../components/Properties';
 import { filterData, getFilterValues } from '../utils/filterData';
 import { Dropdown } from 'primereact/dropdown';
  
