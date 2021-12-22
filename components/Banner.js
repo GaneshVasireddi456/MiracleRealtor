@@ -11,7 +11,7 @@ const Banner = ({ address, purpose, des1, des2, data,purposeforQuery}) => {
             <h1>{purpose}</h1>
             <h3>{des1}</h3>
             <p>{des2}</p>
-            <Button label="Explore More" className="p-button-sm" icon="pi pi-building" onClick={()=>{Router.push(`/Search?purpose=${purposeforQuery}`)}}/>
+            <Button label="Explore More" className="p-button-sm" icon="pi pi-building" onClick={()=>{Router.push(`/search?purpose=${purposeforQuery}`)}}/>
           </div>
         </div>  
         <Properties data={data}></Properties>
