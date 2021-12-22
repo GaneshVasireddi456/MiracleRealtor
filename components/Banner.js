@@ -14,7 +14,7 @@ const Banner = ({ address, purpose, des1, des2, data,purposeforQuery}) => {
             <Button label="Explore More" className="p-button-sm" icon="pi pi-building" onClick={()=>{Router.push(`/Search?purpose=${purposeforQuery}`)}}/>
           </div>
         </div>  
-        <Properties data={data}></Properties>
+        {/* <Properties data={data}></Properties> */}
       </>
     )
   }
