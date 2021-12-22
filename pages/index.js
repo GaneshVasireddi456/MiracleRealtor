@@ -1,26 +1,11 @@
-import Image from 'next/image'
-import { Button } from 'primereact/button';
-import React from 'react'
-import { getAPI, baseURL } from '../utils/Api'
-import { Properties } from "../components/Properties";
-import Router from 'next/router';
 
-const Banner = ({ address, purpose, des1, des2, data,purposeforQuery}) => {
-  return (
-    <>
-      <div className="p-d-flex p-jc-center p-m-4" >
-        <Image src={address} height={'300px'} width={'600px'} />
-        <div className=" p-m-4" style={{ width: '250px' }}>
-          <h1>{purpose}</h1>
-          <h3>{des1}</h3>
-          <p>{des2}</p>
-          <Button label="Explore More" className="p-button-sm" icon="pi pi-building" onClick={()=>{Router.push(`/search?purpose=${purposeforQuery}`)}}/>
-        </div>
-      </div>  
-      <Properties data={data}></Properties>
-    </>
-  )
-}
+import React from 'react'
+import Banner from '../components/Banner'
+import { getAPI, baseURL } from '../utils/Api'
+
+
+
+
 
 export default function Home({ forRent, forSale }) {
   return (

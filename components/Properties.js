@@ -4,8 +4,7 @@ import Image from 'next/image'
 import '../styles/Home.module.css'
 import { Dialog } from 'primereact/dialog';
 import { useState } from 'react/cjs/react.development';
-import { Galleria } from 'primereact/galleria';
-import SimpleImageSlider from 'react-simple-image-slider';
+
 
 export const Properties = ({ data }) => {
     const [dialog, setdialog] = useState(false)
