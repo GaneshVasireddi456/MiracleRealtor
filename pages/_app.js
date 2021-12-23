@@ -7,7 +7,6 @@ import '../styles/globals.css'
 import Head from 'next/head'
 import Navbar from '../components/Navbar';
 import { ProgressBar } from 'primereact/progressbar';
-import NextNProgress from "nextjs-progressbar";
 import { Router } from 'next/router';
 import { useState } from 'react';
 
