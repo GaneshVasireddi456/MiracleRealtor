@@ -6,19 +6,26 @@ import 'primeflex/primeflex.css';
 import '../styles/globals.css'
 import Head from 'next/head'
 import Navbar from '../components/Navbar';
+import { ProgressBar } from 'primereact/progressbar';
 import NextNProgress from "nextjs-progressbar";
+import { Router } from 'next/router';
+import { useState } from 'react';
 
 
 
 
 function MyApp({ Component, pageProps }) {
-
+  const [progress, setprogress] = useState(false)
+  Router.events.on('routeChangeStart', () => setprogress(true))
+  Router.events.on('routeChangeComplete', () => setprogress(false))
+  Router.events.on('routeChangeError', () => setprogress(false))
   
 
   return (<><Head>
     <title>Real Estate</title>
   </Head>
-  <NextNProgress height={6} color="#4338C9" />
+  {progress && <ProgressBar mode="indeterminate" style={{ height: '6px' }}></ProgressBar>}
+  {/* <NextNProgress height={6} color="#4338C9" /> */}
     <header>
       <div className="p-d-flex p-jc-center p-mt-3">
         <Navbar />
