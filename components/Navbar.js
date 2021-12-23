@@ -11,7 +11,7 @@ const Navbar = () => {
 
     let items = [
         {label: 'Home', icon: 'pi pi-fw pi-home', command: () => { Router.push('/')}},
-        {label: 'Search', icon: 'pi pi-fw pi-search',command: () => {Router.push('/Search?purpose=for-rent')}},
+        {label: 'Search', icon: 'pi pi-fw pi-search',command: () => {Router.push('/Search')}},
         {label: 'Rent Property', icon: 'pi pi-fw pi-credit-card',command: () => {Router.push('/Search?purpose=for-rent')}},
         {label: 'Buy Property', icon: 'pi pi-fw pi-building',command: () => {Router.push('/Search?purpose=for-sale')}}
     ];
