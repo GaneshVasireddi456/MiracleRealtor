@@ -7,7 +7,6 @@ import { Dialog } from 'primereact/dialog';
 
 
  const Properties = ({ data }) => {
-     console.log(data);
      const [dialog, setdialog] = useState(false)
     const [propertyData, setpropertyData] = useState()
     const showDialog = async(property) => {
@@ -28,7 +27,7 @@ import { Dialog } from 'primereact/dialog';
                             <div ><Image src={property.agency.logo.url} width={'70px'} height={'30px'} /></div>
                         </div>}
                         className="p-m-2" >
-                        <Image src={property.coverPhoto.url} width={'500px'} height={'200px'} alt='Image' alt='logo '/>
+                        <Image src={property.coverPhoto.url} width={'500px'} height={'200px'} alt='Image'/>
                     </Card>
                 </div>)
             }
@@ -36,7 +35,7 @@ import { Dialog } from 'primereact/dialog';
            {dialog && <Dialog modal='false' visible={dialog} onHide={() => setdialog(!dialog)} style={{ width: '60vw' }}  >
                 <div className="p-d-flex p-jc-center ">
                     <div >
-                    <Image src={propertyData.coverPhoto.url?propertyData.coverPhoto.url:''} width={'500px'} height={'300px'} />
+                    <Image src={propertyData.coverPhoto.url} width={'500px'} height={'300px'} />
                     </div>
                     <div className="p-grid p-pt-2 p-pl-4">
                        <p>
@@ -52,8 +51,6 @@ import { Dialog } from 'primereact/dialog';
                             </p>
                     </div>
                     </div>
-
-
             </Dialog>}
         </div>
     )
