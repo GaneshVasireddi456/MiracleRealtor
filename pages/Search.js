@@ -6,13 +6,24 @@ import { baseURL, getAPI } from '../utils/Api';
 import  Properties  from '../components/Properties';
 import { filterData, getFilterValues } from '../utils/filterData';
 import { Dropdown } from 'primereact/dropdown';
+import { Paginator } from 'primereact/paginator';
  
 const Search = ({ data }) => {
-    const [filters] = useState(filterData);
+    const template2 = {
+        layout: 'CurrentPageReport PrevPageLink NextPageLink',
+        'CurrentPageReport': (options) => {
+            return (
+                <span style={{ color: 'var(--text-color)', userSelect: 'none', width: '120px', textAlign: 'center' }}>
+                    {options.first} - {options.last} of {options.totalRecords}
+                </span>
+            )
+        }
+    };
+    const [state, setstate] = useState(0)
     const [filter, setfilter] = useState(false)
     const router = useRouter()
     const { purpose } = router.query
-    console.log(purpose);
+    console.log(data);
     const [allValues, setAllValues] = useState({
         purpose:'',
         rentFrequency:'',
@@ -25,6 +36,7 @@ const Search = ({ data }) => {
         sort:'',
         locationExternalIDs:'',
      });
+     
      useEffect(() => {
         router.push({
             pathname: '/Search',
@@ -33,6 +45,15 @@ const Search = ({ data }) => {
          console.log(allValues);
          
      }, [allValues])
+   const  onBasicPageChange=(e)=>{
+       console.log(e,allValues);
+       setstate(eval(e.page*25))
+       allValues['page'] = e.page;
+    router.push({
+        pathname: '/Search',
+        query: allValues
+      })
+   }
     return (
         <>
             <div className="p-d-flex p-jc-center" >
@@ -49,10 +70,8 @@ const Search = ({ data }) => {
                     </div>}
                 </Card>
             </div>
-            <div className="p-d-flex p-jc-center" >
-                <h2>Properties {purpose}</h2>
-            </div>
-            <Properties data={data}></Properties>
+            <Properties data={data.hits}></Properties>
+                 <Paginator template={template2} first={state} rows={data.hits.length} totalRecords={data.nbHits} onPageChange={onBasicPageChange} className="p-jc-end p-my-3"></Paginator>
         </>
     )
 }
@@ -68,11 +87,12 @@ export async function getServerSideProps({ query }) {
     const areaMax = query.areaMax || '35000';
     const locationExternalIDs = query.locationExternalIDs || '5002';
     const categoryExternalID = query.categoryExternalID || '4';
-    const data = await getAPI(`${baseURL}/properties/list?locationExternalIDs=${locationExternalIDs}&purpose=${purpose}&categoryExternalID=${categoryExternalID}&bathsMin=${bathsMin}&rentFrequency=${rentFrequency}&priceMin=${minPrice}&priceMax=${maxPrice}&roomsMin=${roomsMin}&sort=${sort}&areaMax=${areaMax}`)
+    const page=query.page||0;
+    const data = await getAPI(`${baseURL}/properties/list?locationExternalIDs=${locationExternalIDs}&purpose=${purpose}&categoryExternalID=${categoryExternalID}&bathsMin=${bathsMin}&rentFrequency=${rentFrequency}&priceMin=${minPrice}&priceMax=${maxPrice}&roomsMin=${roomsMin}&sort=${sort}&areaMax=${areaMax}&page=${page}`)
 
     return {
         props: {
-            data: data.hits,
+            data: data,
         }
     }
 }

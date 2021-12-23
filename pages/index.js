@@ -26,8 +26,8 @@ export async function getStaticProps() {
   const forSale = await getAPI(`${baseURL}/properties/list?locationExternalIDs=5002,6020&purpose=for-sale`)
   return {
     props: {
-      forRent: forRent.hits,
-      forSale: forSale.hits
+      forRent: forRent,
+      forSale: forSale
     }
   }
 }

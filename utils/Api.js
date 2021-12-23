@@ -5,7 +5,7 @@ export const getAPI = async (url) => {
         {
             headers: {
                 'x-rapidapi-host': 'bayut.p.rapidapi.com',
-                'x-rapidapi-key': '7b525bf8c1mshfa2d83fca0899b9p14e40fjsn7c2374e94b1a'
+                'x-rapidapi-key': '96ce492163mshc551618112fb6aap1f07dajsnb655ea4653d5'
             }
         })
     return data
