@@ -20,3 +20,8 @@ a {
 /* .card:hover{
 background-color: #cfcff3;
 } */
+.label{
+  margin: 2px;
+  font-weight: 450;
+  font-size: 15px;
+}

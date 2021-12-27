@@ -1,7 +1,7 @@
 import React from 'react'
 import Router from 'next/router';
 import { Card } from 'primereact/card';
-import '../styles/Home.module.css'
+
 import { Menu } from 'primereact/menu';
 import { Button } from 'primereact/button';
 
