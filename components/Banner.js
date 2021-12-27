@@ -6,7 +6,7 @@ const Banner = ({ address, purpose, des1, des2, data,purposeforQuery}) => {
     return (
       <>
         <div className="p-d-flex p-jc-center p-m-4" >
-          <Image src={address} height={'300px'} width={'600px'} />
+          <Image src={address} height={300} width={600}/>
           <div className=" p-m-4" style={{ width: '250px' }}>
             <h1>{purpose}</h1>
             <h3>{des1}</h3>

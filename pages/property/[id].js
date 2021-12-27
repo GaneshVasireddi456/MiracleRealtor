@@ -64,10 +64,12 @@ export const Property = ({ data }) => {
                                 <InputText value={data.product} className='p-inputtext-sm' /></div>
                                 <div className='p-col-12 p-lg-4 p-md-6'> 
                                 <p className='label'>Price ( ₹ )</p>
-                                <InputText value={data.price} className='p-inputtext-sm' /></div>
-                                <div className='p-col-12 p-lg-4 p-md-6'>
-                                <p className='label'>Rent frequency</p>
-                                <InputText value={data.rentFrequency} className='p-inputtext-sm' /></div>
+                                <InputText value={data.price} className='p-inputtext-sm' /></div>                                 
+                                {
+                                  (data.purpose==="for-rent") && <div className='p-col-12 p-lg-4 p-md-6'>
+                                  <p className='label'>Rent frequency</p>
+                                  <InputText value={data.rentFrequency} className='p-inputtext-sm' /></div>                                   
+                                }
                                 <div className='p-col-12 p-lg-4 p-md-6'>
                                 <p className='label'>Location</p>
                                 <InputText value={`${data.geography.lat},${data.geography.lng}`} className='p-inputtext-sm' /></div>
