@@ -70,7 +70,7 @@ export const Property = ({ data }) => {
                                 <InputText value={data.rentFrequency} className='p-inputtext-sm' /></div>
                                 <div className='p-col-12 p-lg-4 p-md-6'>
                                 <p className='label'>Location</p>
-                                <InputText value={data.rentFrequency} className='p-inputtext-sm' /></div>
+                                <InputText value={`${data.geography.lat},${data.geography.lng}`} className='p-inputtext-sm' /></div>
                         </div>
                     </div>
                 </div>
